@@ -1,0 +1,59 @@
+<html>
+<head>
+<title>Login</title>
+<style></style>
+<link rel="stylesheet" href="login.css">
+</head>
+<body>
+    <h2 id="log">LOGIN</h2>
+<div id="form">
+
+<form id="login-form" method="POST" action="check_login.php">
+
+    <div class="user-name">
+        <input type="email" class="email" name="email" id="email" required>
+        <label for="email">Email</label> 
+      </div>
+    
+      <div class="pass">
+        <input type="password" class="passwords" name="passwords" id="passwords" required>
+        <label for="passwords">Password</label>
+      </div>
+<button id="btn" type="submit"><b>Login</b></button>
+<div id="message"></div>
+<p style="text-align: center; "><b>Don't have an account? Register <a href="register.html">here</a></b></p>
+</form>
+</div>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+
+<script>
+$(document).ready(function() {
+  $("#login-form").submit(function(event) {
+    event.preventDefault();
+    $.ajax({
+      type: "POST",
+      url: $(this).attr("action"),
+      data: $(this).serialize(),
+      success: function(response) {
+        if (response.trim() == "valid") {
+          $("#message").html("Login successful.");
+          console.log("SS");
+          window.location.href = "pollutant.html";
+        } else {
+          $("#message").html("Invalid username or password.");
+          console.log("NO");
+        }
+      },
+      error: function() {
+        $("#message").html("An error occurred while processing your request.");
+        console.log("er");
+      }
+    });
+  });
+});
+</script>
+</body>
+</html>

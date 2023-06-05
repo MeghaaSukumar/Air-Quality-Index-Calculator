@@ -1,0 +1,94 @@
+body {
+    background-image: url('aqi1.jpg');
+    background-repeat: no-repeat;
+    background-attachment: fixed;  
+    background-size: cover;
+  }
+  #aqi {
+    background-color: rgb(224, 200, 200);
+    width: 300px;
+    border: 2px solid rgb(8, 8, 8);
+    padding: 60px;
+   margin-left: 490px;
+   margin-top: 10px;
+   border-radius: 10px;    
+}
+#val
+{
+    margin-left: 630px;
+   margin-top: 100px;
+}
+  #btn {
+    background-color:rgb(0, 0, 0);
+    color: rgb(251, 248, 248);
+    padding: 12px ;
+    margin-left: 100px;
+    margin-top: 10px;
+    border: none;
+    cursor: pointer;
+    width: 30%;    
+}
+input:focus ~label,
+input:valid ~ label{
+  top: -49px;
+  left: 15px;
+  background: #c6abca;
+  padding: 0 5px;
+  font-size: 10px;
+  color: #0c7b9c;
+}
+
+input{
+  outline: none;
+  border: 1px solid #c8a8c7;
+  border-radius: 5px;
+  padding: 0 10px;
+  height: 35px;
+  font-size: 15px;
+  margin-left:100px;
+  margin-top:10px;
+
+}
+input:focus{
+  border: 1.5px solid #1f52f9;
+}
+
+input[type="number"]{
+    display: block;
+    width: 300px;
+    margin: 10px 0 0 10px;
+  }
+  .name{
+    display: inline-block;
+  }
+  
+  label{
+    position: relative;
+    font-family:roboto;
+    color: #555;
+    font-size: 15px;
+    pointer-events: none;
+    left: 20px;
+    top: -30px;
+    transition: .2s all;
+    
+  }
+  #btn:hover {
+          opacity: 0.8;
+  }
+  #result 
+  {
+     transition: none;
+  }
+  #res{
+    text-decoration: none;
+    background-color:rgb(0, 0, 0);
+    color: rgb(251, 248, 248);
+    padding: 12px ;
+    margin-left: 90px;
+    margin-top: 10px;
+    border: none;
+    cursor: pointer;
+    width: 30%; 
+  }
+ 

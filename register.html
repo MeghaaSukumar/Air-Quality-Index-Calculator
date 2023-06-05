@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+    <link rel="stylesheet" href="register.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function() {
+        $("#register-form").submit(function(event) { event.preventDefault();
+        $.ajax({
+        type: "POST",
+        url: $(this).attr("action"), data: $(this).serialize(), success: function(response) {
+        if (response.trim() == "valid") {
+        $("#message").html("Register successful.");
+        window.location.href = "login.html";
+        } else {
+        $("#message").html("Try again");
+        }
+        },
+        error: function() {
+        $("#message").html("An error occurred while processing your request.");
+        }
+        
+        });
+        });
+        });
+        </script>
+<!--<script>
+  if(document.getElementById('#message').innerHTML=='Register successful.'){
+      window.location='welcome.html';
+  }
+  else{
+    document.getElementById("#res").innerHTML='error';
+  }
+</script>-->
+<script>
+    function confirmPass() {
+        var passwords = document.getElementById("passwords").value;
+        var confirmpassword = document.getElementById("confirm-password").value;
+        var errorSpan = document.getElementById("error");
+        if (passwords !== "" && confirmpassword!== "" && passwords === confirmpassword) {
+            errorSpan.innerHTML = "Perfect";
+            errorSpan.style.color='green';
+        } else {
+            errorSpan.innerHTML = "Passwords do not match";
+            errorSpan.style.color='red';
+        }
+    }
+</script>
+
+</head>
+<body>
+     <h2 id="log">CREATE YOUR ACCOUNT</h2>
+  <div class="bg-img">
+    <form id="register-form" method="post" action="register.php">
+        <div class="name">
+          
+        <input type="name" id="firstname" name="firstname" required>
+        <label for="firstname">First Name</label>
+        </div>
+        <div class="name">
+          
+        <input type="name" id="lastname" name="lastname" required>
+        <label for="lastname">Last Name</label>
+        </div>
+        
+        <div class="user-name">
+          
+        <input type="email" id="email" name="email" required>
+        <label for="email">Email</label>
+      </div>
+      <div class="pass">
+        
+        <input type="password" id="passwords" name="passwords" required>
+        <label for="passwords">Password</label>
+      </div>
+      <div class="pass">
+        
+        <input type="password" id="confirm-password" name="confirm-password" oninput="confirmPass()" required>
+        <label for="confirm-password">Confirm Password</label>
+        <span id="error"></span>
+      </div>
+        
+        <button type="submit" value="Register" id="btn">Register</button>
+        <!--<button type="submit" id="res" onclick="document.location='welcome.html'">Next</button>-->
+        
+        <br>
+      <div id="message"></div>
+      <div id="res"></div>
+      </form>
+      
+    </div>
+</body>
+</html>

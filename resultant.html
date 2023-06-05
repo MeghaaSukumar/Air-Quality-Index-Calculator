@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="resultant.css">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Result</title>
+</head>
+<body>
+    <div id="aqi">
+        <h1>Result</h1>
+  <div id="aqiResult" style="font-weight: bold;"></div><br>
+  <button id="btn" onclick="document.location='logout.html'">OK</button>
+  
+    </div>
+    
+  <script>
+    // Retrieve the AQI value from the URL parameters
+    const urlParams = new URLSearchParams(window.location.search);
+    const aqi = urlParams.get('aqi');
+    
+    // Display the AQI value on the page
+    const aqiResultElement = document.getElementById('aqiResult');
+    aqiResultElement.innerText = 'Overall AQI: ' + aqi;
+    setTimeout(() => {
+      // Display alert based on AQI range
+      if (aqi >= 0 && aqi <= 50) {
+        alert('AQI Range: Good');
+      } else if (aqi > 50 && aqi <= 100) {
+        alert('AQI Range: Satisfactory');
+      } else if (aqi > 100 && aqi <= 200) {
+        alert('AQI Range: Moderately Polluted');
+      } else if (aqi > 200 && aqi <= 300) {
+        alert('AQI Range: Poor');
+      } else if (aqi > 300 && aqi <= 400) {
+        alert('AQI Range: Very Poor');
+      } else if (aqi > 400 && aqi <= 500) {
+        alert('AQI Range: Severe');
+      } else {
+        alert('Invalid AQI value');
+      }
+    }, 500);
+    //document.getElementById("btn").addEventListener("click", function() {
+  //window.location.href = "logout.html";
+//});
+
+  </script>
+  
+
+</body>
+</html>

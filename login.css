@@ -1,0 +1,88 @@
+body {
+    background-image: url('aqi1.jpg');
+    background-repeat: no-repeat;
+    background-attachment: fixed;  
+    background-size: cover;
+  }
+  #form {
+      background-color: rgb(224, 200, 200);
+      width: 300px;
+      border: 2px solid rgb(8, 8, 8);
+      padding: 70px;
+     margin-left: 500px;
+     margin-top: 30px;
+     border-radius: 10px;    
+  }
+  
+  #log
+  {
+      margin-left: 670px;
+     margin-top: 100px;
+  }
+
+  #btn {
+      background-color:rgb(0, 0, 0);
+      color: rgb(251, 248, 248);
+      padding: 12px ;
+      margin-left: 100px;
+      margin-top: 10px;
+      border: none;
+      cursor: pointer;
+      width: 30%;    
+  }
+
+  input:focus ~label,
+  input:valid ~ label{
+    top: -43px;
+    left: 15px;
+    background: #c6abca;
+    padding: 0 5px;
+    font-size: 10px;
+    color: #0c7b9c;
+  }
+
+  input{
+    outline: none;
+    border: 1px solid #c8a8c7;
+    border-radius: 5px;
+    padding: 0 10px;
+    height: 35px;
+    font-size: 15px;
+    margin-left:100px;
+    margin-top:10px;
+  
+  }
+  input:focus{
+    border: 1.5px solid #1f52f9;
+  }
+  
+  input[type="email"]{
+    display: block;
+    width: 300px;
+    margin: 10px 0 0 10px;
+  }
+  .pass{
+    display: inline-block;
+  }
+  
+  input[type="password"]{
+    display: block;
+    width: 300px;
+    margin: 10px 0 0 10px;
+  }
+  
+  label{
+    position: relative;
+    font-family:roboto;
+    color: #555;
+    font-size: 15px;
+    pointer-events: none;
+    left: 20px;
+    top: -28px;
+    transition: .2s all;
+    
+  }
+  
+  #btn:hover {
+          opacity: 0.8;
+  }
